@@ -6,6 +6,7 @@ export default [
     route("resume", "pages/Resume.tsx"),
     route("projects/genny-bot", "pages/projects/GennyBot.tsx"),
     route("projects/sloot-ai", "pages/projects/SlootAi.tsx"),
+    route("*", "pages/NotFound.tsx"),
   ]),
   route("api/chat", "api/chat.ts"),
 ] satisfies RouteConfig;
