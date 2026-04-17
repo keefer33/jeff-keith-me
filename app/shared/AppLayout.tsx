@@ -78,11 +78,11 @@ export default function AppLayout() {
               size="sm"
               aria-label="Toggle navigation"
             />
-            <Title order={1} hiddenFrom="sm">
+            <Title order={4} hiddenFrom="sm">
               Jeff Keith
             </Title>
           </Group>
-          <Group gap={0}>
+          <Group gap={1}>
             <SocialIcons />
             <ThemeToggle />
             <ColorPicker />

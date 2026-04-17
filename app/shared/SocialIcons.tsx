@@ -16,7 +16,7 @@ const socialLinks = [
 
 export default function SocialIcons() {
   return (
-    <Group gap="xs">
+    <Group gap={1}>
       {socialLinks.map(({ label, href, icon: Icon }) => (
         <Tooltip key={label} label={label}>
           <ActionIcon
