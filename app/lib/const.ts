@@ -7,13 +7,15 @@ export type AiModelOption = { value: string; label: string };
 export const DEFAULT_AI_MODEL = "openai/gpt-5.4";
 
 export const AI_MODEL_OPTIONS: AiModelOption[] = [
-  { value: "openai/gpt-5.4", label: "GPT 5.4" },
+  { value: "openai/gpt-5.5", label: "GPT 5.5" },
+  { value: "anthropic/claude-opus-4.7", label: "Claude Opus 4.7" },
   { value: "anthropic/claude-sonnet-4.6", label: "Claude Sonnet 4.6" },
   { value: "anthropic/claude-opus-4.6", label: "Claude Opus 4.6" },
-  { value: "xai/grok-4.20", label: "Grok 4.20" },
-  { value: "google/gemini-3-flash", label: "Gemini 3 Flash" },
-  { value: "deepseek/deepseek-v3.2-thinking", label: "DeepSeek V3.2 Thinking" },
-  { value: "zai/glm-5-turbo", label: "GLM 5 Turbo" },
+  { value: "xai/grok-4.3", label: "Grok 4.3" },
+  { value: "google/gemini-3.1-flash-lite", label: "Gemini 3.1 Flash Lite" },
+  { value: "deepseek/deepseek-v4-flash", label: "DeepSeek V4 Flash" },
+  { value: "deepseek/deepseek-v4-pro", label: "DeepSeek V4 Pro" },
+  { value: "zai/glm-5.1-turbo", label: "GLM 5.1 Turbo" },
   { value: "minimax/minimax-m2.7-highspeed", label: "MiniMax M2.7 High Speed" },
 ];
 
