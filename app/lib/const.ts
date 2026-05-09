@@ -15,7 +15,7 @@ export const AI_MODEL_OPTIONS: AiModelOption[] = [
   { value: "google/gemini-3.1-flash-lite", label: "Gemini 3.1 Flash Lite" },
   { value: "deepseek/deepseek-v4-flash", label: "DeepSeek V4 Flash" },
   { value: "deepseek/deepseek-v4-pro", label: "DeepSeek V4 Pro" },
-  { value: "zai/glm-5.1-turbo", label: "GLM 5.1 Turbo" },
+  { value: "zai/glm-5.1", label: "GLM 5.1" },
   { value: "minimax/minimax-m2.7-highspeed", label: "MiniMax M2.7 High Speed" },
 ];
 
