@@ -4,7 +4,7 @@
  */
 export type AiModelOption = { value: string; label: string };
 
-export const DEFAULT_AI_MODEL = "openai/gpt-5.4";
+export const DEFAULT_AI_MODEL = "openai/gpt-5.5";
 
 export const AI_MODEL_OPTIONS: AiModelOption[] = [
   { value: "openai/gpt-5.5", label: "GPT 5.5" },
