@@ -4,7 +4,7 @@
  */
 export type AiModelOption = { value: string; label: string };
 
-export const DEFAULT_AI_MODEL = "openai/gpt-5.5";
+export const DEFAULT_AI_MODEL = "anthropic/claude-opus-4.7";
 
 export const AI_MODEL_OPTIONS: AiModelOption[] = [
   { value: "openai/gpt-5.5", label: "GPT 5.5" },
@@ -12,6 +12,7 @@ export const AI_MODEL_OPTIONS: AiModelOption[] = [
   { value: "anthropic/claude-sonnet-4.6", label: "Claude Sonnet 4.6" },
   { value: "anthropic/claude-opus-4.6", label: "Claude Opus 4.6" },
   { value: "xai/grok-4.3", label: "Grok 4.3" },
+  { value: "google/gemini-3.5-flash", label: "Gemini 3.5 Flash" },
   { value: "google/gemini-3.1-flash-lite", label: "Gemini 3.1 Flash Lite" },
   { value: "deepseek/deepseek-v4-flash", label: "DeepSeek V4 Flash" },
   { value: "deepseek/deepseek-v4-pro", label: "DeepSeek V4 Pro" },
