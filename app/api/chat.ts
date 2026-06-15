@@ -38,7 +38,6 @@ if (process.env.VITE_COMPOSIO_API_KEY) {
       manageConnections: false,
     });
     const composioTools = await session.tools();
-    console.log(composioTools);
     allTools = (composioTools ?? {}) as unknown as Record<string, unknown>;
   } catch (composioErr) {
     console.error("[runChat] Composio session/tools error:", composioErr);

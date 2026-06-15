@@ -1,75 +1,58 @@
-import { useScrollIntoView, type UseScrollIntoViewOptions } from "@mantine/hooks";
-import { useCallback, useLayoutEffect, useRef } from "react";
-
-export type UseChatScrollOptions = UseScrollIntoViewOptions & {
-  /** When false, ResizeObserver is not attached (e.g. hidden panel). */
-  enabled?: boolean;
-};
+import { useCallback, useRef } from "react";
 
 /**
- * Chat-style autoscroll for Mantine ScrollArea: `scrollableRef` → `viewportRef`,
- * wrap scrollable content in an element with `scrollContentRef`, bottom sentinel with `targetRef`.
- * Uses {@link https://mantine.dev/hooks/use-scroll-into-view/ useScrollIntoView} plus ResizeObserver for layout reflows.
+ * Scroll helpers for Mantine ScrollArea `viewportRef`.
+ * Defers scroll slightly so async layout (e.g. CodeMirror height) can settle before pinning.
  */
-export function useChatScroll(options?: UseChatScrollOptions) {
-  const { enabled = true, ...scrollIntoOptions } = options ?? {};
-  const { scrollIntoView, targetRef, scrollableRef, cancel } = useScrollIntoView<
-    HTMLDivElement,
-    HTMLDivElement
-  >(scrollIntoOptions);
-  const scrollContentRef = useRef<HTMLDivElement>(null);
+export function useChatScroll() {
+  const viewportRef = useRef<HTMLDivElement | null>(null);
 
-  const scrollToBottom = useCallback(() => {
-    scrollIntoView({ alignment: "end" });
-  }, [scrollIntoView]);
+  const performScrollToBottom = useCallback((behavior: ScrollBehavior = "auto") => {
+    const el = viewportRef.current;
 
-  useLayoutEffect(() => {
-    if (!enabled) {
-      return;
-    }
-    const el = scrollContentRef.current;
-    if (!el || typeof ResizeObserver === "undefined") {
-      return;
-    }
-
-    let rafId = 0;
-    const ro = new ResizeObserver(() => {
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => {
-        scrollIntoView({ alignment: "end" });
-      });
+    if (!el) return;
+    el.scrollTo({
+      top: el.scrollHeight + 100,
+      behavior,
     });
-    ro.observe(el);
-    return () => {
-      cancelAnimationFrame(rafId);
-      ro.disconnect();
-    };
-  }, [enabled, scrollIntoView]);
+  }, []);
 
-  const scrollToTop = useCallback(
-    (behavior: ScrollBehavior = "smooth") => {
-      const viewport = scrollableRef.current;
-      if (!viewport) {
-        return;
-      }
-      if (behavior === "smooth") {
-        viewport.scrollTo({ top: 0, behavior: "smooth" });
+  const performScrollToTop = useCallback((behavior: ScrollBehavior = "auto") => {
+    const el = viewportRef.current;
+    if (!el) return;
+    el.scrollTo({
+      top: 0,
+      behavior,
+    });
+  }, []);
+
+  const scrollToBottom = useCallback(
+    (behavior: ScrollBehavior = "smooth", delay = 5) => {
+      if (delay > 0) {
+        window.setTimeout(() => performScrollToBottom(behavior), delay);
       } else {
-        viewport.scrollTop = 0;
+        performScrollToBottom(behavior);
       }
     },
-    [scrollableRef]
+    [performScrollToBottom]
+  );
+
+  const scrollToTop = useCallback(
+    (behavior: ScrollBehavior = "smooth", delay = 0) => {
+      if (delay > 0) {
+        window.setTimeout(() => performScrollToTop(behavior), delay);
+      } else {
+        performScrollToTop(behavior);
+      }
+    },
+    [performScrollToTop]
   );
 
   return {
-    scrollableRef,
-    /** Same ref as `scrollableRef` (older name). */
-    viewportRef: scrollableRef,
-    targetRef,
-    scrollContentRef,
-    scrollIntoView,
+    viewportRef,
+    /** Same ref as `viewportRef` (older name). */
+    scrollableRef: viewportRef,
     scrollToBottom,
     scrollToTop,
-    cancel,
   };
 }

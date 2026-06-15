@@ -45,6 +45,8 @@ interface MarkdownRendererProps {
   className?: string;
   style?: React.CSSProperties;
   useDivForParagraphs?: boolean;
+  /** While true, code blocks render as plain pre/code so height is stable during streaming. */
+  streaming?: boolean;
 }
 
 export default function MarkdownRenderer({
@@ -52,6 +54,7 @@ export default function MarkdownRenderer({
   className,
   style,
   useDivForParagraphs = false,
+  streaming = false,
 }: MarkdownRendererProps) {
   const { colorScheme } = useMantineColorScheme();
 
@@ -80,6 +83,29 @@ export default function MarkdownRenderer({
             if (match) {
               // Code block with language
               const codeContent = String(children).replace(/\n$/, "");
+
+              if (streaming) {
+                return (
+                  <Box
+                    component="pre"
+                    style={{
+                      margin: "1em 0",
+                      maxWidth: "100%",
+                      overflow: "auto",
+                      padding: "12px 16px",
+                      borderRadius: "6px",
+                      fontSize: "0.875rem",
+                      fontFamily: "monospace",
+                      backgroundColor: colorScheme === "dark" ? "#1a202c" : "#f7fafc",
+                      color: colorScheme === "dark" ? "#e2e8f0" : "#2d3748",
+                      whiteSpace: "pre-wrap",
+                      wordBreak: "break-word",
+                    }}
+                  >
+                    <code>{codeContent}</code>
+                  </Box>
+                );
+              }
 
               const handleCopy = async () => {
                 const success = await copyToClipboard(codeContent);
