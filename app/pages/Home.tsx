@@ -26,7 +26,7 @@ export default function Home() {
               View the full resume page
             </Anchor>{" "}
             or{" "}
-            <Anchor href="/JeffKeithResume2026.pdf" underline="hover">
+            <Anchor href="/Jeff_Keith_Resume.pdf" underline="hover">
               download the PDF
             </Anchor>
             .

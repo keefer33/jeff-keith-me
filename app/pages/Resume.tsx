@@ -57,7 +57,7 @@ export default function Resume() {
             </Stack>
 
             <Stack align="flex-end" gap="sm">
-              <Button component="a" href="/JeffKeithResume2026.pdf" variant="light">
+              <Button component="a" href="/Jeff_Keith_Resume.pdf" variant="light">
                 Download PDF
               </Button>
               <Button
@@ -79,20 +79,6 @@ export default function Resume() {
             <Text size="sm">{resume.summary}</Text>
           </Stack>
         </Paper>
-
-        <SectionCard title={resume.professionalDevelopment.title}>
-          <Stack gap="xs">
-            <Text fw={700}>{resume.professionalDevelopment.subtitle}</Text>
-            <Text size="sm" c="dimmed">
-              {resume.professionalDevelopment.range}
-            </Text>
-            <List spacing="xs" size="sm" c="dimmed" icon={<span>•</span>}>
-              {resume.professionalDevelopment.bullets.map((b) => (
-                <List.Item key={b}>{b}</List.Item>
-              ))}
-            </List>
-          </Stack>
-        </SectionCard>
 
         <SectionCard title="Professional Experience">
           <Stack gap="md">

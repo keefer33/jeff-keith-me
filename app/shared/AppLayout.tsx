@@ -154,7 +154,7 @@ export default function AppLayout() {
 
           <MantineNavLink
             component="a"
-            href="/JeffKeithResume2026.pdf"
+            href="/Jeff_Keith_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             label="Resume (PDF)"
