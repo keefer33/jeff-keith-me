@@ -7,14 +7,18 @@ export type AiModelOption = { value: string; label: string };
 export const DEFAULT_AI_MODEL = "anthropic/claude-opus-4.7";
 
 export const AI_MODEL_OPTIONS: AiModelOption[] = [
-  { value: "openai/gpt-5.5", label: "GPT 5.5" },
+  { value: "openai/gpt-5.6-sol", label: "GPT 5.6 Sol" },
+  { value: "openai/gpt-5.6-luna", label: "GPT 5.6 Luna" },
+  { value: "openai/gpt-5.6-terra", label: "GPT 5.6 Terra" },
+  { value: "anthropic/claude-fable-5", label: "Claude Fable 5" },
   { value: "anthropic/claude-opus-4.8", label: "Claude Opus 4.8" },
-  { value: "anthropic/claude-sonnet-4.6", label: "Claude Sonnet 4.6" },
-  { value: "xai/grok-4.3", label: "Grok 4.3" },
+  { value: "anthropic/claude-sonnet-5", label: "Claude Sonnet 5" },
+  { value: "xai/grok-4.5", label: "Grok 4.5" },
   { value: "google/gemini-3.5-flash", label: "Gemini 3.5 Flash" },
   { value: "google/gemini-3.1-flash-lite", label: "Gemini 3.1 Flash Lite" },
   { value: "deepseek/deepseek-v4-flash", label: "DeepSeek V4 Flash" },
   { value: "deepseek/deepseek-v4-pro", label: "DeepSeek V4 Pro" },
+  { value: "zai/glm-5.1", label: "GLM 5.1" },
   { value: "zai/glm-5v-turbo", label: "GLM 5v Turbo" },
   { value: "minimax/minimax-m3", label: "MiniMax M3" },
   { value: "minimax/minimax-m2.7-highspeed", label: "MiniMax M2.7 High Speed" },
