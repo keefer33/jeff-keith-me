@@ -12,6 +12,12 @@ FROM node:20-alpine AS build-env
 COPY . /app/
 COPY --from=development-dependencies-env /app/node_modules /app/node_modules
 WORKDIR /app
+ARG VITE_AI_GATEWAY_API_KEY
+ARG VITE_COMPOSIO_API_KEY
+ARG VITE_USER_ID
+ENV VITE_AI_GATEWAY_API_KEY=$VITE_AI_GATEWAY_API_KEY
+ENV VITE_COMPOSIO_API_KEY=$VITE_COMPOSIO_API_KEY
+ENV VITE_USER_ID=$VITE_USER_ID
 RUN npm run build
 
 FROM node:20-alpine
