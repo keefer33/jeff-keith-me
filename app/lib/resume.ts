@@ -19,6 +19,7 @@ export const resume = {
         "Developed scalable React and TypeScript applications supporting streaming AI conversations, media generation, voice cloning, character creation, avatar experiences, and workflow automation.",
         "Built production-grade AI infrastructure including observability, prompt evaluation, structured outputs, monitoring, reliability testing, and cost optimization.",
         "Leveraged AI-native development workflows using Cursor, Claude, ChatGPT, and custom automation tooling to accelerate product development and experimentation.",
+        "React, Typescript, Node.js, Express.js, Docker, Vercel, AI Gateway, Composio,AWS, Supabase, Postgres, Stripe, Cursor, Claude Code",
       ],
     },
     {
@@ -32,6 +33,7 @@ export const resume = {
         "Delivered an AI-assisted retention platform leveraging Palantir Foundry, behavioral data, experimentation frameworks, and personalized customer experiences.",
         "Implemented release and deployment improvements that reduced production defects and increased delivery confidence.",
         "Mentored engineers through architecture reviews, code reviews, career development, and technical leadership.",
+        "React, Remix, Typescript, PHP Laravel, Shopify Hydrogen, Liquid, Node.js,Docker, Azure, SQL, GraphQL, Contentful, Shopify Plus, Checkout Extensibility, Shopify Functions and APIs, React Query, Klaviyo, Segment, Claude Code, Cursor, Jira, Confluence, Agile, Github actions, CI/CD, Stripe, Optimizely, Datadog, Cypress",
       ],
     },
     {
@@ -43,6 +45,7 @@ export const resume = {
         "Architected and developed healthcare software solutions supporting enterprise clinical data workflows.",
         "Led development of Node.js APIs, frontend applications, CI/CD pipelines, testing frameworks, and deployment processes.",
         "Managed a remote engineering team and guided technical design and delivery.",
+        "React, Typescript, Node.js, Docker, Postgres, Git, CI/CD, Jenkins, Agile, Scrum",
       ],
     },
     {
@@ -53,6 +56,7 @@ export const resume = {
       bullets: [
         "Primary developer for FabSuite Go, an API-driven steel fabrication management platform.",
         "Designed and implemented inventory, shipping, inspection, and 3D model integration capabilities.",
+        "React, Typescript, Node.js, Docker, Postgres, Git, CI/CD, Jenkins, Agile, Scrum",
       ],
     },
     {
@@ -63,6 +67,7 @@ export const resume = {
       bullets: [
         "Built custom web applications, e-commerce platforms, payment integrations, membership systems, and business applications.",
         "Founded and operated SavingLots.com, developing custom commerce, inventory, payment, and fulfillment systems.",
+        "Wordpress, Shopify, PHP, Javascript, HTML, CSS",
       ],
     },
   ],
@@ -91,11 +96,22 @@ export const resume = {
     },
     {
       group: "Backend & APIs",
-      skills: ["Node.js", "Express", "GraphQL", "REST APIs", "Laravel"],
+      skills: [
+        "Node.js",
+        "Express",
+        "GraphQL",
+        "REST APIs",
+        "Laravel",
+        "Shopify Hydrogen",
+        "Shopify Functions and APIs",
+        "Shopify Plus",
+      ],
     },
     {
       group: "AI Engineering",
       skills: [
+        "Cursor",
+        "Claude Code",
         "OpenAI",
         "Claude",
         "Gemini",
@@ -113,7 +129,7 @@ export const resume = {
     },
     {
       group: "Cloud & Infrastructure",
-      skills: ["AWS", "GCP", "Docker", "Linux/Ubuntu", "CI/CD"],
+      skills: ["AWS", "GCP", "Docker", "Linux/Ubuntu", "CI/CD", "Azure", "Docker", "Vercel"],
     },
     {
       group: "Data & Storage",
