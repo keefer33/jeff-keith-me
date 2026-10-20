@@ -17,7 +17,7 @@ export default function GennyBotProjectPage() {
             title="Product overview"
             description="Genny.bot is a production-ready generative AI app for creating images and videos (Veo, Sora, Kling, Flux, and more). It's a full-stack platform with both a frontend and backend API."
           >
-            <Image src="https://aifile.link/Flwk7X.jpg" alt="Genny.bot screenshot" />
+            <Image src="https://file.genny.bot/Flwk7X.jpg" alt="Genny.bot screenshot" />
           </FeatureSection>
           <FeatureSection
             title="Ask the assistant"

@@ -107,7 +107,7 @@ export default function AppLayout() {
 
         <Stack align="center" justify="center" gap="xs">
           <Avatar
-            src="https://aifile.link/7k8Tsl.jpg"
+            src="https://file.genny.bot/7k8Tsl.jpg"
             color="cyan"
             size="120px"
             variant="outline"

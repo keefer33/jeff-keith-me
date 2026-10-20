@@ -93,7 +93,7 @@ export async function action({ request }: { request: Request }) {
       { type: "text", text: input },
       {
         type: "file",
-        data: new URL("https://aifile.link/Jeff_Keith_Resume.pdf"),
+        data: new URL("https://file.genny.bot/Jeff_Keith_Resume.pdf"),
         mediaType: "application/pdf",
         filename: "Jeff_Keith_Resume.pdf",
       },
@@ -127,7 +127,7 @@ DATA SOURCES
 Use the following sources when answering questions:
 
 1. Resume (primary source)
-   URL: https://aifile.link/Jeff_Keith_Resume.pdf
+   URL: https://file.genny.bot/Jeff_Keith_Resume.pdf
    - Use the Composio Workbench tool to extract structured information from the resume
    - Treat the resume as the most authoritative source for Jeff’s work history, technical skills, and roles
 
